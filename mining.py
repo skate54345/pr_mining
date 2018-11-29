@@ -17,7 +17,7 @@ pull_titles = []
 #inputs path from user args
 repo_path = sys.argv[1]
 repo = g.get_repo(repo_path)
-pulls = repo.get_pulls(state='open', sort='created', base='master')
+pulls = repo.get_pulls(state='closed', sort='created', base='master')
 
 for pr in pulls:
     pull_titles.append(pr.title)
@@ -45,5 +45,5 @@ print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nCSV ready!")
 
 #append to end of file
 with open("data.csv","a") as csv:
-    csv.write("%s, %s, %s, %s\n" % (repo_path, bug_tally, feature_tally, refactor_tally))
+    csv.write("%s, %s, %s, %s, %s\n" % (repo_path, total_that_have_keywords, bug_tally, feature_tally, refactor_tally))
 csv.close()
