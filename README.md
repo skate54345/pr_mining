@@ -1,4 +1,6 @@
-Runs in command line with repo path as argument
+- Generate and copy an access token through GitHub
+- Create "token.txt" and paste your token
+- Run in command line with repo path as argument
 example: "python mining.py torvalds/linux"
 
 - Mines all pull requests from a GitHub repository and scans each title for keywords
